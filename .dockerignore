@@ -1,0 +1,6 @@
+.git
+.gitignore
+.vscode
+.vs
+ExcaliburOutput*
+venv

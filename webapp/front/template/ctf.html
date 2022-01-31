@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Excalibur</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+  <!-- Meta -->
+  <meta name="Content-Language" content="en">
+  <meta name="Robots" content="all">
+  <meta name="theme-color" content="#42f4c5">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="{%  static  'css/normalize.css'  %}" rel="stylesheet">
+  <link href="{%  static  'css/style.css'  %}" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script src="https://buttons.github.io/buttons.js"></script>
+</head>
+<body>
+  <div id="parentmain">
+    <div id="parenthome">
+      <div>
+        <h1 id="logo">Excalibur</h1>
+        <button class="btn btn_disable btn_liens disable" id="btn_lien_page_chall">Challenge</button>
+        <button class="btn btn_disable btn_liens" id="btn_lien_page_ctf">CTF</button>
+      </div>
+      <div id="Loginform">
+        <table id="loginparameters_table">
+          <caption>CTF Options</caption>
+          <tr>
+            <td style="width: 7.5em">
+              <label for="CTF_URL">URL</label>
+            </td>
+            <td>
+              <input type="text" name="CTF_URL" id="CTF_URL" style="height:35px;width:fit-content;"> 
+            </td> 
+          </tr>
+          <tr>
+            <td>
+              <label for="Login">Login</label>
+            </td>
+            <td>
+              <input type="text" name="Login" id="Login" style="height:35px;width:25em;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Password">Password</label>
+            </td>
+            <td>
+              <input type="password" name="Password" id="Password" style="height:35px;width:25em;"> 
+            </td> 
+          </tr>
+          <tr>
+            <td>
+              <p>Flag format</p>
+            </td>
+            <td>
+              <input type="text" name="flag_format_input" id="flag_format_input" style="height:35px;width:25em">
+            </td>
+          <tr>
+            <td colspan="2" style="position: relative;">
+              <button class="btn btn_disable param" id="verbose_input_ctf">Verbose</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <button class="btn" id="user_check">Login</button>
+      </div>
+      <div id="outter_output_div">
+        <p class="textarea-label row-one">Output</p>
+        <textarea readonly class="row-two" name="output" id="output"></textarea>
+      </div>
+    </div>
+  </div>
+  <div id="particles-js"></div>
+  <script>particlesJS.load('particles-js', "{% static 'particles.json' %}", function () { });</script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'js/ctf.js' %}"></script>
+
+</html>

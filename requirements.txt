@@ -1,0 +1,16 @@
+requests==2.25.1
+beautifulsoup4==4.9.3
+Pillow==8.1.0
+pyenchant==3.2.0
+pytesseract==0.3.7
+python_magic==0.4.5
+pyunpack==0.2.2
+regex==2020.11.13
+lxml==4.6.2
+patool==1.12
+matplotlib==3.3.4
+python-brainfuck==0.9.1
+whitespace==1.0.0b8
+patool==1.12
+python-magic==0.4.5
+scipy==1.6.3

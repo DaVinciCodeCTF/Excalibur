@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Excalibur</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+  <!-- Meta -->
+  <meta name="Content-Language" content="en">
+  <meta name="Robots" content="all">
+  <meta name="theme-color" content="#42f4c5">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="{%  static  'css/normalize.css'  %}" rel="stylesheet">
+  <link href="{%  static  'css/style.css'  %}" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script src="https://buttons.github.io/buttons.js"></script>
+</head>
+<body onload="mainform.reset()">
+  <div id="parentmain">
+    <div id="parenthome">
+      <div id="div_liens">
+        <h1 id="logo">Excalibur</h1>
+        <button class="btn btn_disable btn_liens" id="btn_lien_page_chall">Challenge</button>
+        <button class="btn btn_disable btn_liens disable" id="btn_lien_page_ctf">CTF</button>
+      </div>
+      <div id="mainform">
+        <div class="mainform_container">
+          <div id="file_input_div">
+            <form id="file-upload-form" class="uploader">
+              <input id="file-upload" type="file" name="file"/>
+              <div id="file-drag">
+                <img id="file-image" src="#" alt="Preview" class="hidden">
+                <div id="start">
+                  <i class="fa fa-download" aria-hidden="true"></i>
+                  <div>Select a file or drag here</div>
+                  <div id="notimage" class="hidden">Please select a file</div>
+                  <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+                </div>
+                <div id="response" class="hidden">
+                  <div id="messages"></div>
+                  <progress class="progress" id="file-progress" value="0">
+                    <span>0</span>%
+                  </progress>
+                </div>
+              </div>
+              <!-- <button class="btn" id="upload_button" type="button">Submit</button> -->
+              <div id="error" class="error"></div>
+            </form>
+          </div>
+          <div id="plaintext_source_div">
+            <p class="textarea-label row-one">Plaintext</p>
+            <textarea class="row-two" name="plaintext" id="plaintext" cols="4" rows="2"></textarea>
+          </div>
+          <div id="web_links_div">
+            <p class="textarea-label">Web chall link</p>
+            <input type="text" name="web_link_source" id="web_link_source">
+          </div>
+        </div>
+      </div>
+      <div id="optionsform">
+        <!-- Conseil si on refait un jour la mise en forme de cette page : utiliser du css (display: grid;, ou ptetre table) pour faire la table de parametre, ce sera beaucoup plus flexible qu'une table html-->
+        <table id="parameters_table">
+          <caption>Parameters</caption>
+          <tr>
+            <td><p>Challenge category</p></td>
+            <td><button class="btn btn_disable param disable" id="btn_crypto">Crypto</button></td>
+            <td><button class="btn btn_disable param disable" id="btn_stega">Stega</button></td>
+            <td><button class="btn btn_disable param disable" id="btn_forensic">Forensic</button></td>
+            <td><button class="btn btn_disable param disable" id="btn_web">Web</button></td>
+          </tr>
+          <tr>
+            <td>
+              <p>Flag format</p>
+            </td>
+            <td colspan="2">
+              <input type="text" name="flag_format_input" id="flag_format_input">
+            </td>
+            <td>
+              <p id="verbose_p">Verbose</p>
+            </td>
+            <td>
+              <button class="btn btn_disable param change_text_disable" id="verbose_input">Enable</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <button class="btn" id="upload_button" type="button">Submit</button> 
+      </div>
+      <div class="textarea_output" id="outter_output_div">
+        <p class="textarea-label row-one">Output</p>
+        <textarea readonly class="row-two" name="output" id="output"></textarea>
+      </div>
+      <div class="textarea_output" id="outter_error_output_div">
+        <p class="textarea-label row-one">Error output</p>
+        <textarea readonly class="row-two" name="error_output" id="error_output"></textarea>
+      </div>
+    </div>
+  </div>
+  <div id="particles-js"></div>
+  <script>particlesJS.load('particles-js', "{% static 'particles.json' %}", function () { });</script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
+
+</html>
